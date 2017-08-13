@@ -18,4 +18,14 @@ export class ProductListComponent implements OnInit {
       .all()
       .subscribe(products => this.products = products)
   }
+
+  like(product: Product) {
+    this.productService
+      .like(product)
+      .subscribe((success) => {
+        if (success) product.likes += 1;
+      }, (error) => {
+        console.log(error);
+      });
+  }
 }

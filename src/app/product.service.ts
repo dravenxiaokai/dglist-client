@@ -7,17 +7,23 @@ import { Product } from './product';
 @Injectable()
 export class ProductService {
 
-  private url = 'api/products';
+    private url = 'api/products';
 
-  private headers = new Headers({ 'Content-Type': 'application/json' });
+    private headers = new Headers({ 'Content-Type': 'application/json' });
 
-  constructor(
-    private http: Http
-  ) {}
+    constructor(
+        private http: Http
+    ) { }
 
-  all(): Observable<Product[]> {
-    return this.http
-      .get(this.url)
-      .map(response => response.json() as Product[]);
-  }
+    all(): Observable<Product[]> {
+        return this.http
+            .get(this.url)
+            .map(response => response.json() as Product[]);
+    }
+
+    like(product: Product): Observable<boolean> {
+        return this.http
+            .put(`${this.url}/${product._id}/likes`, {}, { headers: this.headers })
+            .map(response => response.json().success);
+    }
 }
