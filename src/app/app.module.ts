@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http'
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list.component';
 import { ProductService } from './product.service';
+import { AppRoutingModule } from './app.routing'
+import {HashLocationStrategy,LocationStrategy} from '@angular/common'
 
 @NgModule({
   declarations: [
@@ -13,9 +15,10 @@ import { ProductService } from './product.service';
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
-  providers: [ProductService],
+  providers: [ProductService,{provide:LocationStrategy,useClass:HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
