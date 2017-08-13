@@ -3,4 +3,9 @@
   <h1 class="app-name">
     {{title}}
   </h1>
+  <div class="product">
+    <h2 class="title">{{ product.title }}</h2>
+    <img class="image" [src]="product.image" alt="{{ product.title }}">
+    <div class="price">{{ product.price }}</div>
+  </div>
 </div>

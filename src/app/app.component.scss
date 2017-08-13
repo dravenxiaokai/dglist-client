@@ -2,3 +2,19 @@
    color: #2c3e50;  
    text-align: center;
  }
+.product {
+  float: left;
+  width: 300px;
+  text-align: center;
+  .title {
+    height: 44px;
+    font-size: 16px;
+  }
+  .image {
+    width: 240px;
+  }
+  .price {
+    margin: 5px 0;
+    font-size: 22px;
+  }
+}
