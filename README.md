@@ -10,7 +10,8 @@
     <li>proxy 解决跨域请求，前后端分离，angular路由与nodejs获取请求两不误</li>
 </ol>
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 开发环境启动服务
+1. Run `ng serve` 
+2. Navigate to `http://localhost:4200/`.
 
 [我的微博](http://weibo.com/u/3826537889?refer_flag=1001030201_&is_all=1)
