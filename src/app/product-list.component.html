@@ -4,4 +4,7 @@
     <img class="image" [src]="product.image" alt="{{ product.title }}">
     <div class="price">{{ product.price }}</div>
   </div>
+  <div class="empty-list" *ngIf="!products || products.length === 0">
+    产品列表为空
+  </div>
 </div>
